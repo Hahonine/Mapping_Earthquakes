@@ -35,11 +35,6 @@ let torontoHoods = "https://raw.githubusercontent.com/Hahonine/Mapping_Earthquak
 d3.json(torontoHoods).then(function(data) {
     console.log(data);
   // Creating a GeoJSON layer with the retrieved data.
-  L.geoJSON(data, {
-      style: myStyle,
-      onEachFeature: function(feature, layer) {
-          layer.bindPopup("<h3> Airline: " + feature.properties.airline + "</h3> <hr><h3> Destination" + feature.properties.dst + "</h3>");
-      }
-  })
+  L.geoJSON(data)
   .addTo(map);
 });
